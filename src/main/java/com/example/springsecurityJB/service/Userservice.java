@@ -14,7 +14,7 @@ public class Userservice {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public UserInfo addUser(UserInfo userInfo){
+    public UserInfo addUser(UserInfo userInfo) {
         userInfo.setPassword(passwordEncoder.encode(userInfo.getPassword()));
         return repository.save(userInfo);
     }
